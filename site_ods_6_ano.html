@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODS — Aplicativo Escolar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060b16;
+  --bg-soft: #0b1220;
+  --card: #101a2d;
+  --line: rgba(255,255,255,0.08);
+  --text: #e6edf7;
+  --muted: #aab6c8;
+  --primary: #35c46a;
+  --secondary: #3bb7f4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, var(--bg), var(--bg-soft));
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #06210f;
+  font-weight: 600;
+}
+
+
+
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.6s ease;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.card-header {
+  padding: 20px;
+}
+
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 20px;
+}
+
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card.active .card-content {
+  max-height: 1000px;
+  padding-bottom: 20px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+
+/* animações */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+  animation: fadeUp 1s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card-content p {
+  animation: fadeUp 0.8s ease;
+}
+
+body {
+  background: linear-gradient(-45deg, #060b16, #0b1220, #0a1a2f, #060b16);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+
+<section class="section" id="ods">
+  <h2 class="section-title">Clique em um ODS</h2>
+  <div class="grid" id="odsContainer"></div>
+</section>
+
+<section class="section" id="ods13">
+  <h2 class="section-title">ODS 13 — Mudanças Climáticas</h2>
+  <p>
+    O ODS 13 fala sobre as mudanças climáticas, que são mudanças no clima da Terra causadas principalmente
+    pela poluição e pelo aquecimento global. Em 2026, esse continua sendo um dos maiores problemas do mundo,
+    porque a temperatura do planeta continua aumentando. Esse aumento acontece por causa dos gases poluentes
+    que saem dos carros, das fábricas, das queimadas e do desmatamento. Esses gases ficam na atmosfera e seguram
+    o calor do Sol, fazendo a Terra esquentar mais do que deveria.
+  </p>
+  <p>
+    Quando a temperatura da Terra aumenta, muitas coisas começam a mudar. O gelo dos polos começa a derreter,
+    o nível do mar sobe, acontecem mais enchentes em algumas regiões e secas em outras. Também acontecem mais
+    incêndios florestais, tempestades muito fortes e ondas de calor. Esses desastres naturais podem destruir
+    casas, cidades e prejudicar muitas pessoas e animais.
+  </p>
+  <p>
+    Os animais também sofrem muito com as mudanças climáticas. Alguns animais vivem em lugares frios e estão
+    perdendo seu habitat por causa do derretimento do gelo. Outros animais perdem as florestas por causa das
+    queimadas e do desmatamento. Muitas espécies podem até entrar em extinção se o planeta continuar esquentando.
+  </p>
+  <p>
+    A agricultura também é prejudicada, porque a falta de chuva ou o excesso de chuva pode estragar plantações.
+    Isso pode causar falta de alimentos e aumento no preço da comida. Por isso, as mudanças climáticas não afetam
+    só a natureza, mas também a economia e a vida das pessoas.
+  </p>
+  <p>
+    Para diminuir esse problema, o mundo precisa usar mais energia limpa, como energia solar e energia eólica,
+    que não poluem o ar. Também precisamos diminuir a poluição, usar menos carros poluentes, preservar as
+    florestas, plantar árvores e cuidar melhor da natureza. Pequenas atitudes também ajudam, como economizar
+    energia, reciclar e não jogar lixo na natureza.
+  </p>
+  <p>
+    Os países do mundo estão tentando trabalhar juntos para diminuir o aquecimento global, mas isso precisa
+    acontecer mais rápido. O ODS 13 existe justamente para que todos os países criem soluções para proteger
+    o planeta. Se todo mundo ajudar um pouco, ainda é possível diminuir os impactos das mudanças climáticas
+    e proteger a Terra para as futuras gerações.
+  </p>
+  <p>
+    Esse é um dos ODS mais importantes, porque sem um planeta saudável, não é possível alcançar os outros
+    objetivos, como acabar com a pobreza, melhorar a saúde e garantir educação. Por isso, cuidar do clima
+    é cuidar do futuro de toda a humanidade.
+  </p>
+</section>
+
+<section class="section" id="conclusao">
+  <h2 class="section-title">Conclusão</h2>
+  <p>
+    Os ODS são muito importantes porque ajudam a melhorar o mundo. Eles falam sobre pobreza, saúde,
+    educação, natureza, paz e muitas outras coisas importantes. Se todos ajudarem um pouco, o mundo
+    pode se tornar um lugar melhor para todos.
+  </p>
+</section>
+
+<footer>
+  Trabalho Escolar — ODS — 2026<br>
+  Caetano e Jaron
+</footer>
+
+<script>
+const odsData = [
+  {titulo:"ODS 1 — Sem Pobreza", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-01.jpg", foto:"https://source.unsplash.com/800x600/?poverty,people", texto:"A pobreza é quando as pessoas não têm dinheiro para viver bem. Muitas famílias passam dificuldade e não conseguem comprar comida, roupas ou pagar uma casa. O ODS 1 quer diminuir a pobreza no mundo. Ele fala sobre criar empregos, ajudar famílias pobres e dar oportunidade de estudo. Quando a pobreza diminui, a vida das pessoas melhora muito. Esse objetivo é muito importante para a justiça social."},
+  {titulo:"ODS 2 — Fome Zero", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-02.jpg", foto:"https://source.unsplash.com/800x600/?food,hunger", texto:"O ODS 2 quer acabar com a fome no mundo. Muitas pessoas ainda não têm comida suficiente todos os dias. Esse objetivo também fala sobre agricultura e produção de alimentos de forma sustentável. A alimentação é muito importante para a saúde e para o crescimento das crianças. Um mundo sem fome é um mundo melhor e mais justo."},
+  {titulo:"ODS 3 — Saúde e Bem-Estar", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg", foto:"https://source.unsplash.com/800x600/?hospital,health", texto:"O ODS 3 fala sobre saúde e qualidade de vida. Todas as pessoas devem ter acesso a médicos, hospitais e remédios. Também é importante prevenir doenças com vacinas e água limpa. A saúde mental também faz parte do bem-estar. Quando as pessoas têm saúde, elas podem estudar, trabalhar e viver melhor."},
+  {titulo:"ODS 4 — Educação de Qualidade", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg", foto:"https://source.unsplash.com/800x600/?school,students", texto:"O ODS 4 fala sobre educação para todos. A escola é muito importante para o futuro das pessoas. Na escola aprendemos a ler, escrever e pensar melhor. A educação ajuda a conseguir empregos melhores e a ter uma vida melhor. Todas as crianças devem poder estudar."},
+  {titulo:"ODS 5 — Igualdade de Gênero", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-05.jpg", foto:"https://source.unsplash.com/800x600/?equality,women", texto:"O ODS 5 quer igualdade entre homens e mulheres. Todos devem ter os mesmos direitos e oportunidades. Meninas e meninos devem poder estudar e trabalhar no que quiserem. Esse objetivo também quer acabar com a violência e o preconceito. Igualdade é muito importante."},
+  {titulo:"ODS 6 — Água Potável", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg", foto:"https://source.unsplash.com/800x600/?water,clean", texto:"O ODS 6 fala sobre água limpa e saneamento. A água é muito importante para a vida. Sem água limpa, as pessoas ficam doentes. Esse objetivo quer levar água potável para todas as pessoas e proteger rios e lagos. Cuidar da água é cuidar da vida."},
+  {titulo:"ODS 7 — Energia Limpa", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg", foto:"https://source.unsplash.com/800x600/?solar,energy", texto:"O ODS 7 fala sobre energia limpa e barata. Energia do sol e do vento não polui o planeta. Esse objetivo quer que todas as pessoas tenham energia em casa, na escola e no trabalho. Energia limpa ajuda a proteger o meio ambiente."},
+  {titulo:"ODS 8 — Trabalho Decente", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg", foto:"https://source.unsplash.com/800x600/?work,job", texto:"O ODS 8 fala sobre trabalho digno. As pessoas precisam trabalhar para ganhar dinheiro e viver. Mas o trabalho deve ser seguro e justo. Crianças devem estudar e não trabalhar. Trabalho digno melhora a vida das pessoas."},
+  {titulo:"ODS 9 — Indústria e Inovação", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg", foto:"https://source.unsplash.com/800x600/?technology,industry", texto:"O ODS 9 fala sobre tecnologia, indústria e inovação. A tecnologia ajuda a melhorar a vida das pessoas. Estradas, internet e construções são importantes. Esse objetivo quer desenvolvimento sem destruir a natureza."},
+  {titulo:"ODS 10 — Menos Desigualdade", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg", foto:"https://source.unsplash.com/800x600/?inequality,society", texto:"O ODS 10 quer diminuir a desigualdade. Algumas pessoas têm muito e outras têm muito pouco. Esse objetivo quer mais igualdade e oportunidades para todos. Um mundo mais igual é mais justo."},
+  {titulo:"ODS 11 — Cidades Sustentáveis", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg", foto:"https://source.unsplash.com/800x600/?city,sustainable", texto:"O ODS 11 fala sobre cidades melhores. As cidades devem ser limpas, seguras e organizadas. Também devem ter transporte público e áreas verdes. Cidades sustentáveis são melhores para viver."},
+  {titulo:"ODS 12 — Consumo Responsável", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg", foto:"https://source.unsplash.com/800x600/?recycle,environment", texto:"O ODS 12 fala sobre não desperdiçar. Devemos reciclar, reutilizar e consumir menos. Isso ajuda a proteger o planeta. Pequenas atitudes fazem diferença."},
+  {titulo:"ODS 13 — Mudanças Climáticas", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg", foto:"https://source.unsplash.com/800x600/?climate,earth", texto:"O ODS 13 fala sobre o aquecimento global e as mudanças climáticas. A poluição está esquentando o planeta. Isso causa secas, enchentes e tempestades. Precisamos cuidar do clima."},
+  {titulo:"ODS 14 — Vida na Água", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-14.jpg", foto:"https://source.unsplash.com/800x600/?ocean,sea", texto:"O ODS 14 quer proteger os mares e rios. O lixo e a poluição prejudicam os animais marinhos. Precisamos cuidar da água."},
+  {titulo:"ODS 15 — Vida Terrestre", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg", foto:"https://source.unsplash.com/800x600/?forest,nature", texto:"O ODS 15 fala sobre proteger as florestas e os animais. O desmatamento prejudica a natureza. Precisamos preservar o meio ambiente."},
+  {titulo:"ODS 16 — Paz e Justiça", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-16.jpg", foto:"https://source.unsplash.com/800x600/?peace,justice", texto:"O ODS 16 fala sobre paz e justiça. As pessoas devem viver em segurança e com direitos. Um mundo em paz é melhor para todos."},
+  {titulo:"ODS 17 — Parcerias", img:"https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-17.jpg", foto:"https://source.unsplash.com/800x600/?teamwork,partnership", texto:"O ODS 17 fala sobre união entre países. Todos precisam trabalhar juntos para melhorar o mundo."}
+];
+
+const container = document.getElementById('odsContainer');
+
+// animação ao aparecer
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card').forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      card.classList.add('show');
+    }
+  });
+});
+
+odsData.forEach(ods => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="card-header"><h3>${ods.titulo}</h3></div>
+    <div class="card-content">
+      <img src="${ods.img}">
+      
+      
+      <p>${ods.texto}</p>
+    </div>
+  `;
+
+  card.addEventListener('click', () => {
+    card.style.transform = 'scale(1.02)';
+    setTimeout(()=>{card.style.transform='scale(1)';},150);
+    card.classList.toggle('active');
+  });
+
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>
